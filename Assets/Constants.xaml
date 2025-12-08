@@ -1,0 +1,734 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:pc="clr-namespace:Playnite.Controls;assembly=Playnite"
+                    mc:Ignorable="d">
+
+
+
+    <!-- ===== MISC ===== -->
+    <sys:Boolean x:Key="UseAbsoluteExtraMetadataPath">True</sys:Boolean>
+    <sys:String x:Key="ExtraMetadataPath">C:\Users\Mike Aniki\AppData\Roaming\Playnite</sys:String>
+    <sys:Boolean x:Key="DynamicAutoEnabled">False</sys:Boolean>
+
+
+    <sys:Boolean x:Key="AcceuilOrNot">True</sys:Boolean>
+    <sys:Int32 x:Key="AvatarImageIndex">1</sys:Int32>
+    <sys:Int32 x:Key="BackgroundImageIndex">1</sys:Int32>
+    <sys:Double x:Key="MediaElementOpacity">1.0</sys:Double>
+    <sys:Boolean x:Key="MiniTrailer">True</sys:Boolean>
+    <sys:Boolean x:Key="NoBarMode">False</sys:Boolean>
+    <sys:Double x:Key="ShadeOpacity">1</sys:Double>
+    <sys:String x:Key="UserName">User Name</sys:String>
+    <CornerRadius x:Key="Corner">15</CornerRadius>
+    <sys:Double x:Key="FontSize">24</sys:Double>
+    <sys:Double x:Key="FontSizeSmall">20</sys:Double>
+
+    <!-- ===== COLORS ===== -->
+    <Color x:Key="AlternativeButtonColor">#00000000</Color>
+    <Color x:Key="BlackColor">#FF000000</Color>
+    <Color x:Key="BorderDark">#848484</Color>
+    <Color x:Key="BorderLight">#f8f8ff</Color>
+    <Color x:Key="ControlBackgroundColor">#16181b</Color>
+    <Color x:Key="ControlBackgroundColorDark">#0c0c0c</Color>
+    <Color x:Key="DynamicGlowBackgroundPrimary">#3F434B</Color>
+    <Color x:Key="GlyphColor">#26b7ff</Color>
+    <Color x:Key="Hltb">#F0FFFF</Color>
+    <Color x:Key="HltbAlt">#888481</Color>
+    <Color x:Key="PlayButtonBackgroundColor1">#181A1E</Color>
+    <Color x:Key="PlayButtonBackgroundColor2">#181A1E</Color>
+    <Color x:Key="PlayButtonBackgroundColor3">#181A1E</Color>
+    <Color x:Key="PlayButtonIsMouseOverBackgroundColor1">#999999</Color>
+    <Color x:Key="PlayButtonIsMouseOverBackgroundColor2">#999999</Color>
+    <Color x:Key="PlayButtonIsMouseOverBackgroundColor3">#999999</Color>
+    <Color x:Key="SelectionLightColor">#e5e4e2</Color>     <!-- Couleur de contour pour les combobox -->
+    <Color x:Key="TextAltDetail">#e5e4e2</Color>
+    <Color x:Key="TextColor">#F6F6F6</Color>
+    <Color x:Key="TextColorDark">#282828</Color>
+    <Color x:Key="TextDetail">#888481</Color>
+    <Color x:Key="TextSecondaryColor">#e5e4e2</Color>
+    <Color x:Key="TextVertical">#F0FFFF</Color>
+    <Color x:Key="TextWhiteColor">#F6F6F6</Color>
+    <Color x:Key="GlowFocusColor">#e5e4e2</Color>
+    <Color x:Key="TextHighlight">#888481</Color>
+
+
+
+    <!-- ===== BRUSHES ===== -->
+    <SolidColorBrush x:Key="AlternativeButtonBrush" Color="{DynamicResource AlternativeButtonColor}" />
+    <SolidColorBrush x:Key="CheckBoxCheckMarkBkBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
+    <SolidColorBrush x:Key="ComboBoxBorderBrush" Color="{DynamicResource TextSecondaryColor}" />
+    <SolidColorBrush x:Key="ControlBackgroundBrush" Color="{DynamicResource ControlBackgroundColor}" />
+    <SolidColorBrush x:Key="GlyphBrush" Color="{DynamicResource SelectionLightColor}" />
+    <SolidColorBrush x:Key="HltbAltBrush" Color="{DynamicResource HltbAlt}" />
+    <SolidColorBrush x:Key="HltbBrush" Color="{DynamicResource Hltb}" />
+    <SolidColorBrush x:Key="MainBackgourndBrush" Color="{DynamicResource BlackColor}" />
+    <SolidColorBrush x:Key="SelectionLightBrush" Color="{DynamicResource SelectionLightColor}" />
+    <SolidColorBrush x:Key="TextAltBrush" Color="{DynamicResource TextSecondaryColor}" />
+    <SolidColorBrush x:Key="TextBrush" Color="{DynamicResource TextColor}" />
+    <SolidColorBrush x:Key="TextBrushDark" Color="{DynamicResource TextColorDark}" />
+    <SolidColorBrush x:Key="TextDetailAltBrush" Color="{DynamicResource TextAltDetail}" />
+    <SolidColorBrush x:Key="TextDetailBrush" Color="{DynamicResource TextDetail}" />
+    <SolidColorBrush x:Key="TextVerticalBrush" Color="{DynamicResource TextVertical}" />
+    <SolidColorBrush x:Key="TextWhiteBrush" Color="{DynamicResource TextWhiteColor}" />
+    <SolidColorBrush x:Key="GlowFocusBrush" Color="{DynamicResource GlowFocusColor}" />
+    <SolidColorBrush x:Key="TextHighlightBrush" Color="{DynamicResource TextHighlight}" />
+
+
+
+    <!-- ===== GRADIENTS ===== -->
+    <LinearGradientBrush x:Key="ButtonPlayColor" StartPoint="0,0" EndPoint="0,1" >
+        <GradientStop Color="{DynamicResource DynamicGlowBackgroundPrimary}" Offset="0.1"/>
+        <GradientStop Color="#16181b" Offset="0.9"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="ControlBackgroundDarkBrush" StartPoint="0,1" EndPoint="1,0" >
+        <GradientStop Color="#16181b" Offset="0.1"/>
+        <GradientStop Color="#16181b" Offset="4"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="FocusGameBorderBrush" StartPoint="0,0" EndPoint="1,1">
+        <GradientStop Color="#E0E0E0" Offset="0"/>
+        <GradientStop Color="#E0E0E0" Offset="1"/>
+    </LinearGradientBrush>
+
+
+    <LinearGradientBrush x:Key="NoFocusBorderButtonBrush" StartPoint="0,0" EndPoint="1,1">
+        <GradientStop Color="#32000000" Offset="0"/>
+        <GradientStop Color="#32000000" Offset="1"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="InstallButtonBackgroundBrush" StartPoint="0.0, 0.0" EndPoint="1.0, 0.0" >
+        <GradientStop Color="#2a3039" Offset="0"/>
+        <GradientStop Color="#181A1E" Offset="0.75"/>
+        <GradientStop Color="#181A1E" Offset="1"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="InstallButtonIsMouseOverBackgroundBrush" StartPoint="0.0, 0.0" EndPoint="1.0, 0.0" >
+        <GradientStop Color="#999999" Offset="0"/>
+        <GradientStop Color="#999999" Offset="0.75"/>
+        <GradientStop Color="#999999" Offset="1"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="OverlayMenu" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#202226" Offset="0.0"/>
+        <GradientStop Color="#181A1E" Offset="0.4"/>
+        <GradientStop Color="#111214" Offset="1.0"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="MenuBorderBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#70FFFFFF" Offset="0"/>
+        <GradientStop Color="#20FFFFFF" Offset="0.5"/>
+        <GradientStop Color="#10FFFFFF" Offset="1"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="ButtonBackgroundFocus" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#88FFFFFF" Offset="0"/>
+        <GradientStop Color="#20FFFFFF" Offset="0.3"/>
+        <GradientStop Color="#00000000" Offset="0.6"/>
+        <GradientStop Color="#70000000" Offset="1"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="ButtonBackgroundNoFocus" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#30000000" Offset="0"/>
+        <GradientStop Color="#30000000" Offset="1"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="us" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#10FFFFFF" Offset="0.00"/>
+        <GradientStop Color="#00000000" Offset="0.50"/>
+        <GradientStop Color="#10000000" Offset="1.00"/>
+    </LinearGradientBrush>
+
+
+    <LinearGradientBrush x:Key="PlayButtonBackgroundBrush" StartPoint="0.0, 1.0" EndPoint="1.0, 0.0" >
+        <GradientStop Color="{DynamicResource PlayButtonBackgroundColor1}" Offset="0"/>
+        <GradientStop Color="{DynamicResource PlayButtonBackgroundColor2}" Offset="0.75"/>
+        <GradientStop Color="{DynamicResource PlayButtonBackgroundColor3}" Offset="1"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="PlayButtonIsMouseOverBackgroundBrush" StartPoint="0.0, 0.0" EndPoint="1.0, 0.0" >
+        <GradientStop Color="{DynamicResource PlayButtonIsMouseOverBackgroundColor1}" Offset="0"/>
+        <GradientStop Color="{DynamicResource PlayButtonIsMouseOverBackgroundColor2}" Offset="0.75"/>
+        <GradientStop Color="{DynamicResource PlayButtonIsMouseOverBackgroundColor3}" Offset="1"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="ProgressBrush" StartPoint="0,1" EndPoint="1,0" Opacity="0.7" >
+        <GradientStop Color="{DynamicResource BorderDark}" Offset="0"/>
+        <GradientStop Color="{DynamicResource BorderLight}" Offset="1"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="ShadeBackground" StartPoint="0,1" EndPoint="0,0">
+        <GradientStop Color="#FF000000" Offset="0.00"/>
+        <GradientStop Color="#FF000000" Offset="0.30"/>
+        <GradientStop Color="#F2000000" Offset="0.45"/>
+        <GradientStop Color="#CC000000" Offset="0.60"/>
+        <GradientStop Color="#80000000" Offset="0.75"/>
+        <GradientStop Color="#33000000" Offset="0.90"/>
+        <GradientStop Color="#00000000" Offset="1.00"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="ShadeBackgroundDetails" StartPoint="0,0" EndPoint="1,0">
+        <GradientStop Color="#F0000000" Offset="0.00"/>  <!-- ~88% -->
+        <GradientStop Color="#90000000" Offset="0.22"/>  <!-- ~65% -->
+        <GradientStop Color="#44000000" Offset="0.35"/>  <!-- ~27% -->
+        <GradientStop Color="#00000000" Offset="0.55"/>  <!-- 0% -->
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="ShadeBottom" StartPoint="0,1" EndPoint="0,0">
+        <GradientStop Color="#F0000000" Offset="0.00"/>
+        <!-- 94% -->
+        <GradientStop Color="#90000000" Offset="0.10"/>
+        <!-- 82% -->
+        <GradientStop Color="#50000000" Offset="0.22"/>
+        <!-- 56% -->
+        <GradientStop Color="#20000000" Offset="0.35"/>
+        <!-- 31% -->
+        <GradientStop Color="#00000000" Offset="0.55"/>
+        <!-- 12% -->
+    </LinearGradientBrush>
+
+    <DropShadowEffect x:Key="SoftTextShadow" ShadowDepth="1" BlurRadius="6" Color="Black" Opacity="0.6"/>
+
+    <LinearGradientBrush x:Key="ShadeTop" StartPoint="1,0" EndPoint="0,0">
+        <GradientStop Color="#90000000" Offset="0.00"/>
+        <!-- 82% -->
+        <GradientStop Color="#50000000" Offset="0.05"/>
+        <!-- 56% -->
+        <GradientStop Color="#20000000" Offset="0.15"/>
+        <!-- 31% -->
+        <GradientStop Color="#00000000" Offset="0.25"/>
+        <!-- 12% -->
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="ShadeLeft" StartPoint="0,0" EndPoint="1,0">
+        <!-- Zone proche du bord gauche : densité forte -->
+        <GradientStop Color="#98000000" Offset="0.0"/>
+        <!-- 69% -->
+        <GradientStop Color="#90000000" Offset="0.15"/>
+        <!-- 50% -->
+        <GradientStop Color="#44000000" Offset="0.30"/>
+        <!-- 25% -->
+        <GradientStop Color="#00000000" Offset="0.45"/>
+        <!-- 8% -->
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="ShadeControlCenter" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#FF000000" Offset="0.00"/>
+        <GradientStop Color="#E6000000" Offset="0.07"/>
+        <GradientStop Color="#88000000" Offset="0.16"/>
+        <GradientStop Color="#33000000" Offset="0.24"/>
+        <GradientStop Color="#00000000" Offset="0.30"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="ShadeControlCenter2" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#FF000000" Offset="0.00"/>
+        <GradientStop Color="#E6000000" Offset="0.47"/>
+        <GradientStop Color="#88000000" Offset="0.66"/>
+        <GradientStop Color="#33000000" Offset="0.84"/>
+        <GradientStop Color="#00000000" Offset="1.00"/>
+    </LinearGradientBrush>
+
+    <RadialGradientBrush x:Key="ClockHalo" GradientOrigin="0.5,0.5" Center="0.5,0.5" RadiusX="1" RadiusY="1">
+        <GradientStop Color="#40000000" Offset="0.0"/>
+        <GradientStop Color="#00000000" Offset="1.0"/>
+    </RadialGradientBrush>
+
+
+    <RadialGradientBrush x:Key="LogoHalo" Center="0.5,0.5" GradientOrigin="0.5,0.5" RadiusX="0.95" RadiusY="0.85">
+        <GradientStop Color="#60000000" Offset="0.00"/>
+        <GradientStop Color="#40000000" Offset="0.25"/>
+        <GradientStop Color="#20000000" Offset="0.35"/>
+        <GradientStop Color="#00000000" Offset="0.50"/>
+    </RadialGradientBrush>
+
+    <LinearGradientBrush x:Key="StaticBorderBrush" StartPoint="0,1" EndPoint="1,0" >
+        <GradientStop Color="{DynamicResource BorderDark}" Offset="0"/>
+        <GradientStop Color="{DynamicResource BorderLight}" Offset="1"/>
+    </LinearGradientBrush>
+
+
+
+    <LinearGradientBrush x:Key="SuccessMenu" StartPoint="0,1" EndPoint="1,0" >
+        <GradientStop Color="#16181b" Offset="0"/>
+        <GradientStop Color="#16181b" Offset="3"/>
+    </LinearGradientBrush>
+
+    <RadialGradientBrush x:Key="DynamicGlowBackgroundSuccess" Center="0.5,0.4" GradientOrigin="0.5,0.4" RadiusX="0.8" RadiusY="0.9">
+        <GradientStop Color="{DynamicResource DynamicGlowBackgroundPrimary}" Offset="0.0"/>
+        <GradientStop Color="#16181b" Offset="0.7"/>
+        <GradientStop Color="#000000" Offset="1.0"/>
+    </RadialGradientBrush>
+
+    <!-- Fond principal des overlays (verre fumé) -->
+    <LinearGradientBrush x:Key="GlassMainBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#18FFFFFF" Offset="0.00"/>
+        <GradientStop Color="#08080808" Offset="0.55"/>
+        <GradientStop Color="#00000000" Offset="1.00"/>
+    </LinearGradientBrush>
+
+    <!-- Liseré interne doux -->
+    <SolidColorBrush x:Key="GlassInnerLineBrush" Color="#22FFFFFF"/>
+
+    <!-- Ombre douce “flottante” (DropShadowEffect ne peut pas être une ressource, donc on met ses valeurs ici pour homogénéité) -->
+    <x:Double x:Key="GlassShadowDepth">0</x:Double>
+    <x:Double x:Key="GlassShadowBlur">14</x:Double>
+    <x:Double x:Key="GlassShadowOpacity">0.38</x:Double>
+    <Color x:Key="GlassShadowColor">#AA000000</Color>
+
+    <LinearGradientBrush x:Key="GlassWindowBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#10FFFFFF" Offset="0.00"/>
+        <GradientStop Color="#00000000" Offset="0.50"/>
+        <GradientStop Color="#10000000" Offset="1.00"/>
+    </LinearGradientBrush>
+
+    <!-- ===== STYLES ===== -->
+
+    <Style x:Key="AnimatedFlashMenu" TargetType="Border">
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush>
+                    <GradientStop Color="#10E5E4E2 " Offset="0"/>
+                    <GradientStop Color="#40E5E4E2" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="True">
+                <DataTrigger.EnterActions>
+                    <BeginStoryboard Name="StartFlashMenu">
+                        <Storyboard RepeatBehavior="1x">
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.1" />
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" From="1" To="0" BeginTime="0:0:0.1" Duration="0:0:0.5" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </DataTrigger.EnterActions>
+                <DataTrigger.ExitActions>
+                    <StopStoryboard BeginStoryboardName="StartFlashMenu" />
+                </DataTrigger.ExitActions>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+
+
+    <Style x:Key="ButtonTextBlockBaseStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+        <Setter Property="FontFamily" Value="Segoe UI Variable" />
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+    </Style>
+
+    <Style x:Key="HltbAltStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+        <Setter Property="FontFamily" Value="Bahnschrift SemiBold, Bahnschrift, Segoe UI Variable Display Semibold, Segoe UI Semibold, Segoe UI" />
+        <Setter Property="Foreground" Value="{DynamicResource HltbAltBrush}" />
+    </Style>
+
+    <Style x:Key="HltbStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+        <Setter Property="FontFamily" Value="Bahnschrift SemiBold, Bahnschrift, Segoe UI Variable Display Semibold, Segoe UI Semibold, Segoe UI" />
+        <Setter Property="Foreground" Value="{DynamicResource TextDetailAltBrush}" />
+    </Style>
+
+    <Style x:Key="TextBlockAltDetailStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+        <Setter Property="FontFamily" Value="Bahnschrift SemiBold, Bahnschrift, Segoe UI Variable Display Semibold, Segoe UI Semibold, Segoe UI" />
+        <Setter Property="Foreground" Value="{DynamicResource TextDetailAltBrush}" />
+    </Style>
+
+    <Style x:Key="TextBlockBaseStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="22" />
+        <Setter Property="FontFamily" Value="Bahnschrift SemiBold, Bahnschrift, Segoe UI Variable Display Semibold, Segoe UI Semibold, Segoe UI" />
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+    </Style>
+
+    <Style x:Key="TextBlockBoldBaseStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+        <Setter Property="FontFamily" Value="Bahnschrift SemiBold, Bahnschrift, Segoe UI Variable Display Semibold, Segoe UI Semibold, Segoe UI" />
+        <Setter Property="Foreground" Value="{DynamicResource TextWhiteBrush}" />
+    </Style>
+
+    <Style x:Key="TextBlockDetailStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+        <Setter Property="FontFamily" Value="Bahnschrift SemiBold, Bahnschrift, Segoe UI Variable Display Semibold, Segoe UI Semibold, Segoe UI" />
+        <Setter Property="Foreground" Value="{DynamicResource TextDetailBrush}" />
+    </Style>
+
+    <Style x:Key="TextBlockMiniStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+        <Setter Property="FontFamily" Value="Bahnschrift SemiBold, Bahnschrift, Segoe UI Variable Display Semibold, Segoe UI Semibold, Segoe UI" />
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+    </Style>
+
+    <Style x:Key="InfoValueStyle" TargetType="TextBlock" BasedOn="{StaticResource TextBlockAltDetailStyle}">
+        <Setter Property="FontSize" Value="26"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Opacity" Value="0.95"/>
+    </Style>
+
+    <Style x:Key="InfoGlyphStyle" TargetType="TextBlock" BasedOn="{StaticResource TextBlockDetailStyle}">
+        <Setter Property="FontFamily" Value="{DynamicResource FontIcoFont}"/>
+        <Setter Property="FontSize" Value="26"/>
+        <Setter Property="Margin" Value="0,0,8,0"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="TextOptions.TextFormattingMode" Value="Display"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+    </Style>
+
+    <!-- ThemeOptions -->
+
+    <!-- GROS TITRE -->
+    <Style x:Key="TextThemeOptionStyle" TargetType="TextBlock" BasedOn="{StaticResource TextBlockBaseStyle}">
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="34"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Foreground" Value="{DynamicResource TextHighlightBrush}"/>
+        <Setter Property="Margin" Value="0,0,0,2"/>
+        <Setter Property="MaxWidth" Value="1200"/>
+        <!-- même largeur visuelle que la colonne d’options -->
+        <Setter Property="Padding" Value="0"/>
+    </Style>
+
+    <!-- SOUS-TITRE (mini header “section”) -->
+    <Style x:Key="TextThemeOptionStyleSousTitre" TargetType="TextBlock" BasedOn="{StaticResource TextBlockBaseStyle}">
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="FontSize" Value="17"/>
+        <Setter Property="FontWeight" Value="Normal"/>
+        <Setter Property="Foreground" Value="{DynamicResource TextAltBrush}"/>
+        <Setter Property="Opacity" Value="0.8"/>
+        <Setter Property="LineHeight" Value="18"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="TextTrimming" Value="None"/>
+        <Setter Property="MaxWidth" Value="900"/>
+        <Setter Property="Margin" Value="10,0,0,0"/>
+    </Style>
+
+    <!-- TEXTE MINI (notes/descr) -->
+    <Style x:Key="TextThemeOptionStyleMini" TargetType="TextBlock" BasedOn="{StaticResource TextBlockBaseStyle}">
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="FontWeight" Value="Normal"/>
+        <Setter Property="Foreground" Value="{DynamicResource TextAltBrush}"/>
+        <Setter Property="Opacity" Value="0.8"/>
+        <Setter Property="LineHeight" Value="18"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="TextTrimming" Value="None"/>
+        <Setter Property="MaxWidth" Value="900"/>
+        <Setter Property="Margin" Value="10,4,0,16"/>
+    </Style>
+
+    <Style x:Key="HeaderDockPanelStyle" TargetType="DockPanel">
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="LastChildFill" Value="False"/>
+        <Setter Property="Margin" Value="0,24,0,10"/>
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="KeyboardNavigation.IsTabStop" Value="False"/>
+    </Style>
+
+    <Style x:Key="HeaderDockPanelStyleSousTitre" TargetType="DockPanel">
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="LastChildFill" Value="False"/>
+        <Setter Property="Margin" Value="0,-10,0,0"/>
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="KeyboardNavigation.IsTabStop" Value="False"/>
+    </Style>
+
+    <Style x:Key="HeaderDockPanelStyleMini" TargetType="DockPanel">
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="LastChildFill" Value="False"/>
+        <Setter Property="Margin" Value="0,-10,0,10"/>
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="KeyboardNavigation.IsTabStop" Value="False"/>
+    </Style>
+
+    <!-- Haut -->
+    <Style x:Key="Aniki_AddonsUpdateWindowStyle_Top" TargetType="Border">
+        <Setter Property="CornerRadius" Value="16,16,0,0"/>
+        <Setter Property="BorderThickness" Value="2,2,2,0"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource NoFocusBorderButtonBrush}"/>
+        <Setter Property="Background" Value="{DynamicResource OverlayMenu}"/>
+        <Setter Property="Opacity" Value="0.85"/>
+        <Setter Property="ClipToBounds" Value="True"/>
+    </Style>
+
+    <!-- Bas -->
+    <Style x:Key="Aniki_AddonsUpdateWindowStyle_Bottom" TargetType="Border">
+        <Setter Property="CornerRadius" Value="0,0,16,16"/>
+        <Setter Property="BorderThickness" Value="2,0,2,2"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource NoFocusBorderButtonBrush}"/>
+        <Setter Property="Background" Value="{DynamicResource OverlayMenu}"/>
+        <Setter Property="Opacity" Value="0.85"/>
+        <Setter Property="ClipToBounds" Value="True"/>
+    </Style>
+
+    <!-- ===== IMAGE RESOURCES ===== -->
+    <ImageBrush x:Key="Avatar0" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="Avatar1" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="Avatar2" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (2).png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="Avatar3" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (3).png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="Avatar4" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (4).png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="Avatar5" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (5).png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="Avatar6" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (6).png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="Avatar7" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (7).png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="Avatar8" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (8).png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="Avatar9" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (9).png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="Avatar10" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (10).png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="Avatar11" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (11).png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="Avatar12" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (12).png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="Avatar13" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (13).png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="Avatar14" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (14).png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="Avatar15" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (15).png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="Avatar16" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (16).png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="Avatar17" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (17).png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="Avatar18" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (18).png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="Avatar19" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (19).png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="Avatar20" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (20).png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="Avatar21" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (21).png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="Avatar22" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (22).png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="Avatar23" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (23).png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="Avatar24" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (24).png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="Avatar25" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (25).png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="Avatar26" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (26).png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="Avatar27" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (27).png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="Avatar28" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (28).png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="Avatar29" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (29).png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="Avatar30" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (30).png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="Avatar31" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (31).png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="Avatar32" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (32).png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="Avatar33" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (33).png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="Avatar34" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (34).png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="Avatar35" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (35).png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="Avatar36" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (36).png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="Avatar37" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (37).png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="Avatar38" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Jira.png'}" Stretch="UniformToFill"/>
+
+    <!-- ===== INTERFACES ===== -->
+
+    <!-- 19.PixelGray -->
+    <ImageBrush x:Key="MainMenuImage19" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/19.PixelGray/MainMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="SettingImage19" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/19.PixelGray/SettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="FrameSettingImage19" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/19.PixelGray/FrameSettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="BoxMessageImage19" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/19.PixelGray/MessageBox.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="GameMenuImage19" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/19.PixelGray/GameMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="ItemMenuImage19" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/19.PixelGray/ItemMenu.png'}" Stretch="UniformToFill"/>
+
+    <!-- 20.FF8 -->
+    <ImageBrush x:Key="MainMenuImage20" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/20.FF8/MainMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="SettingImage20" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/20.FF8/SettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="FrameSettingImage20" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/20.FF8/FrameSettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="BoxMessageImage20" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/20.FF8/MessageBox.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="GameMenuImage20" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/20.FF8/GameMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="ItemMenuImage20" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/20.FF8/ItemMenu.png'}" Stretch="UniformToFill"/>
+
+    <!-- 21.FFX -->
+    <ImageBrush x:Key="MainMenuImage21" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/21.FFX/MainMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="SettingImage21" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/21.FFX/SettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="FrameSettingImage21" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/21.FFX/FrameSettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="BoxMessageImage21" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/21.FFX/MessageBox.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="GameMenuImage21" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/21.FFX/GameMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="ItemMenuImage21" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/21.FFX/ItemMenu.png'}" Stretch="UniformToFill"/>
+
+    <!-- 22.FF7Original -->
+    <ImageBrush x:Key="MainMenuImage22" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/22.FF7Original/MainMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="SettingImage22" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/22.FF7Original/SettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="FrameSettingImage22" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/22.FF7Original/FrameSettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="BoxMessageImage22" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/22.FF7Original/MessageBox.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="GameMenuImage22" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/22.FF7Original/GameMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="ItemMenuImage22" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/22.FF7Original/ItemMenu.png'}" Stretch="UniformToFill"/>
+
+    <!-- 23.FF7Remake -->
+    <ImageBrush x:Key="MainMenuImage23" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/23.FF7Remake/MainMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="SettingImage23" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/23.FF7Remake/SettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="FrameSettingImage23" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/23.FF7Remake/FrameSettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="BoxMessageImage23" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/23.FF7Remake/MessageBox.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="GameMenuImage23" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/23.FF7Remake/GameMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="ItemMenuImage23" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/23.FF7Remake/ItemMenu.png'}" Stretch="UniformToFill"/>
+
+    <!-- 24.DragonQuest -->
+    <ImageBrush x:Key="MainMenuImage24" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/24.DragonQuest/MainMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="SettingImage24" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/24.DragonQuest/SettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="FrameSettingImage24" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/24.DragonQuest/FrameSettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="BoxMessageImage24" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/24.DragonQuest/MessageBox.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="GameMenuImage24" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/24.DragonQuest/GameMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="ItemMenuImage24" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/24.DragonQuest/ItemMenu.png'}" Stretch="UniformToFill"/>
+
+    <!-- 25.Persona5 -->
+    <ImageBrush x:Key="MainMenuImage25" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/25.Persona5/MainMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="SettingImage25" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/25.Persona5/SettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="FrameSettingImage25" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/25.Persona5/FrameSettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="BoxMessageImage25" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/25.Persona5/MessageBox.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="GameMenuImage25" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/25.Persona5/GameMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="ItemMenuImage25" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/25.Persona5/ItemMenu.png'}" Stretch="UniformToFill"/>
+
+    <!-- 26.DemonSlayer -->
+    <ImageBrush x:Key="MainMenuImage26" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/26.DemonSlayer/MainMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="SettingImage26" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/26.DemonSlayer/SettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="FrameSettingImage26" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/26.DemonSlayer/FrameSettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="BoxMessageImage26" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/26.DemonSlayer/MessageBox.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="GameMenuImage26" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/26.DemonSlayer/GameMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="ItemMenuImage26" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/26.DemonSlayer/ItemMenu.png'}" Stretch="UniformToFill"/>
+
+    <!-- 27.UzumakiClan -->
+    <ImageBrush x:Key="MainMenuImage27" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/27.UzumakiClan/MainMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="SettingImage27" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/27.UzumakiClan/SettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="FrameSettingImage27" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/27.UzumakiClan/FrameSettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="BoxMessageImage27" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/27.UzumakiClan/MessageBox.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="GameMenuImage27" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/27.UzumakiClan/GameMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="ItemMenuImage27" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/27.UzumakiClan/ItemMenu.png'}" Stretch="UniformToFill"/>
+
+    <!-- 28.UchiwaClan -->
+    <ImageBrush x:Key="MainMenuImage28" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/28.UchiwaClan/MainMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="SettingImage28" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/28.UchiwaClan/SettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="FrameSettingImage28" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/28.UchiwaClan/FrameSettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="BoxMessageImage28" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/28.UchiwaClan/MessageBox.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="GameMenuImage28" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/28.UchiwaClan/GameMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="ItemMenuImage28" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/28.UchiwaClan/ItemMenu.png'}" Stretch="UniformToFill"/>
+
+    <!-- 29.Akatsuki -->
+    <ImageBrush x:Key="MainMenuImage29" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/29.Akatsuki/MainMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="SettingImage29" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/29.Akatsuki/SettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="FrameSettingImage29" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/29.Akatsuki/FrameSettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="BoxMessageImage29" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/29.Akatsuki/MessageBox.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="GameMenuImage29" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/29.Akatsuki/GameMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="ItemMenuImage29" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/29.Akatsuki/ItemMenu.png'}" Stretch="UniformToFill"/>
+
+    <!-- 30.DBZ -->
+    <ImageBrush x:Key="MainMenuImage30" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/30.DBZ/MainMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="SettingImage30" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/30.DBZ/SettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="FrameSettingImage30" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/30.DBZ/FrameSettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="BoxMessageImage30" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/30.DBZ/MessageBox.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="GameMenuImage30" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/30.DBZ/GameMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="ItemMenuImage30" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/30.DBZ/ItemMenu.png'}" Stretch="UniformToFill"/>
+
+    <!-- 31.OnePiece -->
+    <ImageBrush x:Key="MainMenuImage31" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/31.OnePiece/MainMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="SettingImage31" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/31.OnePiece/SettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="FrameSettingImage31" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/31.OnePiece/FrameSettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="BoxMessageImage31" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/31.OnePiece/MessageBox.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="GameMenuImage31" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/31.OnePiece/GameMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="ItemMenuImage31" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/31.OnePiece/ItemMenu.png'}" Stretch="UniformToFill"/>
+
+    <!-- 32.Bleach -->
+    <ImageBrush x:Key="MainMenuImage32" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/32.Bleach/MainMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="SettingImage32" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/32.Bleach/SettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="FrameSettingImage32" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/32.Bleach/FrameSettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="BoxMessageImage32" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/32.Bleach/MessageBox.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="GameMenuImage32" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/32.Bleach/GameMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="ItemMenuImage32" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/32.Bleach/ItemMenu.png'}" Stretch="UniformToFill"/>
+
+    <!-- 33.GhostInTheShell -->
+    <ImageBrush x:Key="MainMenuImage33" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/33.GhostInTheShell/MainMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="SettingImage33" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/33.GhostInTheShell/SettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="FrameSettingImage33" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/33.GhostInTheShell/FrameSettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="BoxMessageImage33" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/33.GhostInTheShell/MessageBox.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="GameMenuImage33" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/33.GhostInTheShell/GameMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="ItemMenuImage33" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/33.GhostInTheShell/ItemMenu.png'}" Stretch="UniformToFill"/>
+
+    <!-- 34.Berserk -->
+    <ImageBrush x:Key="MainMenuImage34" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/34.Berserk/MainMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="SettingImage34" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/34.Berserk/SettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="FrameSettingImage34" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/34.Berserk/FrameSettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="BoxMessageImage34" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/34.Berserk/MessageBox.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="GameMenuImage34" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/34.Berserk/GameMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="ItemMenuImage34" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/34.Berserk/ItemMenu.png'}" Stretch="UniformToFill"/>
+
+    <!-- 35.Witcher -->
+    <ImageBrush x:Key="MainMenuImage35" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/35.Witcher/MainMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="SettingImage35" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/35.Witcher/SettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="FrameSettingImage35" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/35.Witcher/FrameSettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="BoxMessageImage35" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/35.Witcher/MessageBox.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="GameMenuImage35" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/35.Witcher/GameMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="ItemMenuImage35" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/35.Witcher/ItemMenu.png'}" Stretch="UniformToFill"/>
+
+    <!-- 36.Yakuza -->
+    <ImageBrush x:Key="MainMenuImage36" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/36.Yakuza/MainMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="SettingImage36" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/36.Yakuza/SettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="FrameSettingImage36" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/36.Yakuza/FrameSettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="BoxMessageImage36" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/36.Yakuza/MessageBox.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="GameMenuImage36" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/36.Yakuza/GameMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="ItemMenuImage36" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/36.Yakuza/ItemMenu.png'}" Stretch="UniformToFill"/>
+
+    <!-- 37.EldenRing -->
+    <ImageBrush x:Key="MainMenuImage37" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/37.EldenRing/MainMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="SettingImage37" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/37.EldenRing/SettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="FrameSettingImage37" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/37.EldenRing/FrameSettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="BoxMessageImage37" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/37.EldenRing/MessageBox.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="GameMenuImage37" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/37.EldenRing/GameMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="ItemMenuImage37" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/37.EldenRing/ItemMenu.png'}" Stretch="UniformToFill"/>
+
+    <!-- 38.MGS -->
+    <ImageBrush x:Key="MainMenuImage38" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/38.MGS/MainMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="SettingImage38" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/38.MGS/SettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="FrameSettingImage38" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/38.MGS/FrameSettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="BoxMessageImage38" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/38.MGS/MessageBox.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="GameMenuImage38" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/38.MGS/GameMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="ItemMenuImage38" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/38.MGS/ItemMenu.png'}" Stretch="UniformToFill"/>
+
+    <!-- 39.Batman -->
+    <ImageBrush x:Key="MainMenuImage39" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/39.Batman/MainMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="SettingImage39" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/39.Batman/SettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="FrameSettingImage39" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/39.Batman/FrameSettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="BoxMessageImage39" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/39.Batman/MessageBox.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="GameMenuImage39" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/39.Batman/GameMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="ItemMenuImage39" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/39.Batman/ItemMenu.png'}" Stretch="UniformToFill"/>
+
+    <!-- 40.Joker -->
+    <ImageBrush x:Key="MainMenuImage40" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/40.Joker/MainMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="SettingImage40" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/40.Joker/SettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="FrameSettingImage40" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/40.Joker/FrameSettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="BoxMessageImage40" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/40.Joker/MessageBox.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="GameMenuImage40" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/40.Joker/GameMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="ItemMenuImage40" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/40.Joker/ItemMenu.png'}" Stretch="UniformToFill"/>
+
+    <!-- 41.HarleyQuinn -->
+    <ImageBrush x:Key="MainMenuImage41" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/41.HarleyQuinn/MainMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="SettingImage41" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/41.HarleyQuinn/SettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="FrameSettingImage41" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/41.HarleyQuinn/FrameSettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="BoxMessageImage41" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/41.HarleyQuinn/MessageBox.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="GameMenuImage41" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/41.HarleyQuinn/GameMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="ItemMenuImage41" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/41.HarleyQuinn/ItemMenu.png'}" Stretch="UniformToFill"/>
+
+    <!-- 42.Superman -->
+    <ImageBrush x:Key="MainMenuImage42" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/42.Superman/MainMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="SettingImage42" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/42.Superman/SettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="FrameSettingImage42" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/42.Superman/FrameSettingsBackground.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="BoxMessageImage42" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/42.Superman/MessageBox.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="GameMenuImage42" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/42.Superman/GameMenu.png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="ItemMenuImage42" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/42.Superman/ItemMenu.png'}" Stretch="UniformToFill"/>
+
+<ImageBrush x:Key="WelcomeImage1" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/Welcome.png'}" Stretch="UniformToFill"/>
+<ImageBrush x:Key="WelcomeImage20" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/20.FF8/Welcome.png'}" Stretch="UniformToFill"/>
+<ImageBrush x:Key="WelcomeImage21" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/21.FFX/Welcome.png'}" Stretch="UniformToFill"/>
+<ImageBrush x:Key="WelcomeImage22" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/22.FF7Original/Welcome.png'}" Stretch="UniformToFill"/>
+<ImageBrush x:Key="WelcomeImage23" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/23.FF7Remake/Welcome.png'}" Stretch="UniformToFill"/>
+<ImageBrush x:Key="WelcomeImage24" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/24.DragonQuest/Welcome.png'}" Stretch="UniformToFill"/>
+<ImageBrush x:Key="WelcomeImage25" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/25.Persona5/Welcome.png'}" Stretch="UniformToFill"/>
+<ImageBrush x:Key="WelcomeImage26" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/26.DemonSlayer/Welcome.png'}" Stretch="UniformToFill"/>
+<ImageBrush x:Key="WelcomeImage27" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/27.UzumakiClan/Welcome.png'}" Stretch="UniformToFill"/>
+<ImageBrush x:Key="WelcomeImage28" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/28.UchiwaClan/Welcome.png'}" Stretch="UniformToFill"/>
+<ImageBrush x:Key="WelcomeImage29" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/29.Akatsuki/Welcome.png'}" Stretch="UniformToFill"/>
+<ImageBrush x:Key="WelcomeImage30" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/30.DBZ/Welcome.png'}" Stretch="UniformToFill"/>
+<ImageBrush x:Key="WelcomeImage31" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/31.OnePiece/Welcome.png'}" Stretch="UniformToFill"/>
+<ImageBrush x:Key="WelcomeImage32" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/32.Bleach/Welcome.png'}" Stretch="UniformToFill"/>
+<ImageBrush x:Key="WelcomeImage33" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/33.GhostInTheShell/Welcome.png'}" Stretch="UniformToFill"/>
+<ImageBrush x:Key="WelcomeImage34" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/34.Berserk/Welcome.png'}" Stretch="UniformToFill"/>
+<ImageBrush x:Key="WelcomeImage35" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/35.Witcher/Welcome.png'}" Stretch="UniformToFill"/>
+<ImageBrush x:Key="WelcomeImage36" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/36.Yakuza/Welcome.png'}" Stretch="UniformToFill"/>
+<ImageBrush x:Key="WelcomeImage37" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/37.EldenRing/Welcome.png'}" Stretch="UniformToFill"/>
+<ImageBrush x:Key="WelcomeImage38" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/38.MGS/Welcome.png'}" Stretch="UniformToFill"/>
+<ImageBrush x:Key="WelcomeImage39" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/39.Batman/Welcome.png'}" Stretch="UniformToFill"/>
+<ImageBrush x:Key="WelcomeImage40" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/40.Joker/Welcome.png'}" Stretch="UniformToFill"/>
+<ImageBrush x:Key="WelcomeImage41" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/41.HarleyQuinn/Welcome.png'}" Stretch="UniformToFill"/>
+<ImageBrush x:Key="WelcomeImage42" ImageSource="{ThemeFile 'Themes Option/2.Interface/Images/42.Superman/Welcome.png'}" Stretch="UniformToFill"/>
+
+	
+
+</ResourceDictionary>
